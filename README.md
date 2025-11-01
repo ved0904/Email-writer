@@ -1,10 +1,10 @@
-# 📧 AI Email Reply Generator
+#  AI Email Reply Generator
 
 An intelligent email assistant that helps you craft professional email responses in seconds using AI. This project combines a Spring Boot backend, React frontend, and a Chrome extension to seamlessly integrate AI-powered email generation into your Gmail workflow.
 
 ![Email Reply Demo](./docs/email-demo.gif)
 
-## 🌟 Features
+##  Features
 
 - **AI-Powered Replies**: Generate contextual email responses using Google's Gemini AI
 - **Multiple Tone Options**: Choose from professional, casual, or friendly tones to match your communication style
@@ -13,7 +13,7 @@ An intelligent email assistant that helps you craft professional email responses
 - **Real-time Generation**: Fast response times with streaming API integration
 - **Copy to Clipboard**: Easily copy generated responses with one click
 
-## 📸 How It Works
+##  How It Works
 
 ### Step 1: Receive an Email
 When you receive an email that requires a response, simply click reply in Gmail.
@@ -35,7 +35,7 @@ The generated reply appears in your compose box. Review it, make any adjustments
 
 ![Step 4 - Generated Reply](./docs/step4-generated.png)
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 Email-Writer/
@@ -67,7 +67,7 @@ Email-Writer/
     └── content.css
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -144,7 +144,7 @@ Email-Writer/
    - Click reply to any email
    - You should see the "AI Reply" button in the compose toolbar
 
-## 💡 Usage
+##  Usage
 
 ### Using the Web Application
 
@@ -167,7 +167,7 @@ Email-Writer/
 5. Review the generated reply and make any edits
 6. Send the email!
 
-## 🔧 API Documentation
+##  API Documentation
 
 ### Generate Email Reply
 
@@ -192,7 +192,7 @@ Generated email reply text as plain string
 - `friendly` - Warm and approachable
 - `null` or empty - Default neutral tone
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 ### Backend
 - **Spring Boot 3.x** - REST API framework
@@ -212,14 +212,14 @@ Generated email reply text as plain string
 - **JavaScript ES6+** - Extension logic
 - **Gmail DOM API** - Integration with Gmail UI
 
-## 🔒 Security & Privacy
+##  Security & Privacy
 
 - All email content is processed through your local backend
 - API keys are stored in local configuration files (never committed to git)
 - The extension only activates on Gmail pages
 - No email data is stored or logged
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Here's how you can help:
 
@@ -229,7 +229,7 @@ Contributions are welcome! Here's how you can help:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 Future Enhancements
+##  Future Enhancements
 
 - [ ] Support for multiple languages
 - [ ] Email sentiment analysis
@@ -240,38 +240,29 @@ Contributions are welcome! Here's how you can help:
 - [ ] Email scheduling integration
 - [ ] Multiple AI provider support (OpenAI, Claude, etc.)
 
-## 🐛 Known Issues
+##  Known Issues
 
 - Extension may need refresh after Gmail updates
 - Tone selection currently not available in the extension (defaults to professional)
 - Long emails may take slightly longer to process
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 👨‍💻 Author
+##  Author
 
 **Parived Arora**
 
 - GitHub: [@ved0904](https://github.com/ved0904)
 - Email: parivedarora09@gmail.com
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Google Gemini AI for the powerful language model
 - Material-UI team for the beautiful React components
 - Spring Boot community for excellent documentation
 - All contributors who help improve this project
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/ved0904/Email-writer/issues) page
-2. Create a new issue with detailed information
-3. Reach out via email
-
 ---
 
 <div align="center">
