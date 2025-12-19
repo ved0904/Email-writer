@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: email-writer-backend
+    runtime: docker
+    dockerfilePath: ./Backend/email-writer-sb/Dockerfile
+    dockerContext: ./Backend/email-writer-sb
+    region: oregon
+    plan: free
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
