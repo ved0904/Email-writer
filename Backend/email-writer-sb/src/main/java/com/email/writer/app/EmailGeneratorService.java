@@ -23,18 +23,16 @@ public class EmailGeneratorService {
         this.webclient = webclientBuilder.build();
     }
 
-    public String generateEmailReply(EmailRequest emailRequest){
-        //Build the prompt
+    public String generateEmailReply(EmailRequest emailRequest) {
         String prompt = buildPrompt(emailRequest);
-        //Craft a Request here
-        Map<String,Object> requestBody = Map.of(
-                "contents" , new Object[]{
-                        Map.of("parts" , new Object[]{
-                                Map.of("text",prompt)
+
+        Map<String, Object> requestBody = Map.of(
+                "contents", new Object[] {
+                        Map.of("parts", new Object[] {
+                                Map.of("text", prompt)
                         })
-                }
-        );
-        //Do request and get Response
+                });
+
         String response = webclient.post()
                 .uri(geminiApiUrl + geminiApiKey)
                 .header("Content-Type", "application/json")
@@ -43,12 +41,11 @@ public class EmailGeneratorService {
                 .bodyToMono(String.class)
                 .block();
 
-        //Extract response and return the response
         return extractResponseContent(response);
     }
 
     private String extractResponseContent(String response) {
-        try{
+        try {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode rootNode = mapper.readTree(response);
             return rootNode.path("candidates")
@@ -58,19 +55,19 @@ public class EmailGeneratorService {
                     .get(0)
                     .path("text")
                     .asText();
-        }catch (Exception e){
-            return "Error processing request: "+ e.getMessage();
+        } catch (Exception e) {
+            return "Error processing request: " + e.getMessage();
         }
     }
 
     private String buildPrompt(EmailRequest emailRequest) {
         StringBuilder prompt = new StringBuilder();
-        prompt.append("Generate a professional email reply for the following email content.Please dont generate a subject line ");
-        if(emailRequest.getTone() != null && !emailRequest.getTone().isEmpty()){
-            prompt.append("Use a ").append(emailRequest.getTone()).append("tone.");
+        prompt.append(
+                "Generate a professional email reply for the following email content. Please dont generate a subject line. ");
+        if (emailRequest.getTone() != null && !emailRequest.getTone().isEmpty()) {
+            prompt.append("Use a ").append(emailRequest.getTone()).append(" tone. ");
         }
-        prompt.append("\nOrignal email: \n").append(emailRequest.getEmailContent());
+        prompt.append("\nOriginal email:\n").append(emailRequest.getEmailContent());
         return prompt.toString();
-
     }
 }

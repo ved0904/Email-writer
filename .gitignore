@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # Dependencies
 **/node_modules
 **/.pnp
@@ -12,19 +10,21 @@
 **/build
 **/dist
 
-# Misc
-.DS_Store
-*.env
-*.env.local
-*.env.development.local
-*.env.test.local
-*.env.production.local
+# Environment files (contains secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+
+# OS
+.DS_Store
 
 # IDE
 .idea/
@@ -52,6 +52,11 @@ buildNumber.properties
 *.ear
 *.iml
 
-# Application specific
+# Temp files
+*.log
+*.tmp
+*_output.txt
+
+# Application secrets
 **/application.properties
 !**/application.properties.example
